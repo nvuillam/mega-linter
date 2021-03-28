@@ -27,6 +27,7 @@ setup(
         "mdx_truly_sane_lists",
         "beautifulsoup4",
         "giturlparse",
+        "unidiff",
     ],
     zip_safe=False,
 )

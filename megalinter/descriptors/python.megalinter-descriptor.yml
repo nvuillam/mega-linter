@@ -42,6 +42,7 @@ linters:
       vscode:
         - name: Native Support
           url: https://code.visualstudio.com/docs/python/linting#_pylint
+
   # BLACK
   - linter_name: black
     name: PYTHON_BLACK
@@ -87,6 +88,16 @@ linters:
         - name: VsCode Python Extension
           url: https://marketplace.visualstudio.com/items?itemName=ms-python.python
 
+    reviewdog_processor:
+      class_name: UnifiedDiffs
+      init_params:
+        file_header_regex: ^would reformat (?P<path>\S+)
+        message_include_file_header: True
+        ignored_line_regexes:
+          - ^Oh no!
+          - ^All done!
+          - ^\d+ file would be left unchanged.
+
   # FLAKE8
   - linter_name: flake8
     name: PYTHON_FLAKE8
@@ -115,6 +126,10 @@ linters:
       vscode:
         - name: Native Support
           url: https://code.visualstudio.com/docs/python/linting#_flake8
+    reviewdog_processor:
+      class_name: Regex
+      init_params:
+        regex: ^(?P<path>[^:]+):(?P<line>\d+):(?P<column>\d+):(?P<message>.+)$
 
   # ISORT
   - linter_name: isort
@@ -167,3 +182,8 @@ linters:
       vscode:
         - name: VsCode Python Extension
           url: https://github.com/Microsoft/vscode-python
+    reviewdog_processor:
+      class_name: UnifiedDiffs
+      init_params:
+        file_header_regex: ^(?:[A-Z]+:) (?P<path>\S+)\s
+        message_include_file_header: True
