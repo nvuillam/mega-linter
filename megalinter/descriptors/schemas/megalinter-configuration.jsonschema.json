@@ -120,6 +120,7 @@
         "ENV_DOTENV_LINTER",
         "GHERKIN_GHERKIN_LINT",
         "GIT_GIT_DIFF",
+        "GIT_GIT_PATHCHK",
         "GO_GOLANGCI_LINT",
         "GO_REVIVE",
         "GRAPHQL_GRAPHQL_SCHEMA_LINTER",
@@ -2303,6 +2304,68 @@
     "GIT_GIT_DIFF_FILTER_REGEX_INCLUDE": {
       "$id": "#/properties/GIT_GIT_DIFF_FILTER_REGEX_INCLUDE",
       "title": "GIT_GIT_DIFF: Including Regex",
+      "type": "string"
+    },
+    "GIT_GIT_PATHCHK_ARGUMENTS": {
+      "$id": "#/properties/GIT_GIT_PATHCHK_ARGUMENTS",
+      "description": "GIT_GIT_PATHCHK: User custom arguments to add in linter CLI call",
+      "examples:": [
+        "--foo",
+        "bar"
+      ],
+      "items": {
+        "type": "string"
+      },
+      "title": "GIT_GIT_PATHCHK: Custom arguments",
+      "type": [
+        "array",
+        "string"
+      ]
+    },
+    "GIT_GIT_PATHCHK_DISABLE_ERRORS": {
+      "$id": "#/properties/GIT_GIT_PATHCHK_DISABLE_ERRORS",
+      "default": false,
+      "title": "GIT_GIT_PATHCHK: Linter does not make Mega-Linter fail even if errors are found",
+      "type": "boolean"
+    },
+    "GIT_GIT_PATHCHK_DISABLE_ERRORS_IF_LESS_THAN": {
+      "$id": "#/properties/GIT_GIT_PATHCHK_DISABLE_ERRORS_IF_LESS_THAN",
+      "default": 0,
+      "title": "GIT_GIT_PATHCHK: Maximum number of errors allowed",
+      "type": "number"
+    },
+    "GIT_GIT_PATHCHK_FILE_EXTENSIONS": {
+      "$id": "#/properties/GIT_GIT_PATHCHK_FILE_EXTENSIONS",
+      "examples:": [
+        ".py",
+        ".myext"
+      ],
+      "items": {
+        "type": "string"
+      },
+      "title": "GIT_GIT_PATHCHK: Override descriptor/linter matching files extensions",
+      "type": "array"
+    },
+    "GIT_GIT_PATHCHK_FILE_NAMES_REGEX": {
+      "$id": "#/properties/GIT_GIT_PATHCHK_FILE_NAMES_REGEX",
+      "examples": [
+        "Dockerfile(-.+)?",
+        "Jenkinsfile"
+      ],
+      "items": {
+        "type": "string"
+      },
+      "title": "GIT_GIT_PATHCHK: Override descriptor/linter matching file name regex",
+      "type": "array"
+    },
+    "GIT_GIT_PATHCHK_FILTER_REGEX_EXCLUDE": {
+      "$id": "#/properties/GIT_GIT_PATHCHK_FILTER_REGEX_EXCLUDE",
+      "title": "GIT_GIT_PATHCHK: Excluding Regex",
+      "type": "string"
+    },
+    "GIT_GIT_PATHCHK_FILTER_REGEX_INCLUDE": {
+      "$id": "#/properties/GIT_GIT_PATHCHK_FILTER_REGEX_INCLUDE",
+      "title": "GIT_GIT_PATHCHK: Including Regex",
       "type": "string"
     },
     "GO_FILTER_REGEX_EXCLUDE": {

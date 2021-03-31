@@ -5,9 +5,10 @@
 
 ## Linters
 
-| Linter                      | Configuration key      |
-|-----------------------------|------------------------|
-| [git_diff](git_git_diff.md) | [GIT](git_git_diff.md) |
+| Linter                            | Configuration key         |
+|-----------------------------------|---------------------------|
+| [git_diff](git_git_diff.md)       | [GIT](git_git_diff.md)    |
+| [git_pathchk](git_git_pathchk.md) | [GIT](git_git_pathchk.md) |
 
 ## Linted files
 

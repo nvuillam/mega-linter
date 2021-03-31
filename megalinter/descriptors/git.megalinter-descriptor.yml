@@ -24,3 +24,20 @@ linters:
     cli_help_arg_name: "--help"
     examples:
       - "git diff --check"
+  # GIT_PATHCHK
+  - linter_name: git_pathchk
+    lint_all_files: true
+    test_folder: git_pathchk
+    linter_text: Git files non-portable pathname check
+    linter_url: https://git-scm.com
+    linter_repo: https://github.com/git/git
+    linter_megalinter_ref_url: never
+    cli_config_arg_name: ""
+    cli_executable: /bin/sh
+    cli_lint_mode: project
+    cli_lint_extra_args:
+      - "-c"
+      - "git ls-files -z | xargs -0 pathchk -P --"
+    cli_help_arg_name: ""
+    examples:
+      - "/bin/sh -c 'git ls-files -z | xargs -0 pathchk -P --'"

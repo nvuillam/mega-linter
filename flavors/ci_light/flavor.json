@@ -8,6 +8,7 @@
         "DOCKERFILE_HADOLINT",
         "ENV_DOTENV_LINTER",
         "GIT_GIT_DIFF",
+        "GIT_GIT_PATHCHK",
         "GROOVY_NPM_GROOVY_LINT",
         "JSON_JSONLINT",
         "JSON_ESLINT_PLUGIN_JSONC",

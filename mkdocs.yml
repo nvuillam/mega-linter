@@ -252,6 +252,7 @@ nav:
           - "GIT":
               - "All GIT linters": "descriptors/git.md"
               - "git_diff": "descriptors/git_git_diff.md"
+              - "git_pathchk": "descriptors/git_git_pathchk.md"
           - "SPELL":
               - "All SPELL linters": "descriptors/spell.md"
               - "misspell": "descriptors/spell_misspell.md"

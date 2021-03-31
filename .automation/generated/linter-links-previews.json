@@ -109,6 +109,11 @@
     "image": null,
     "title": "Git"
   },
+  "git_pathchk": {
+    "description": "None",
+    "image": null,
+    "title": "Git"
+  },
   "golangci-lint": {
     "description": "Fast linters Runner for Go. Contribute to golangci/golangci-lint development by creating an account on GitHub.",
     "image": "https://repository-images.githubusercontent.com/132145189/05239680-dfaf-11e9-9646-2c3ef2f5f8d4",

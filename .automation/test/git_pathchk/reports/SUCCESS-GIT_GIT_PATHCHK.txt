@@ -1,0 +1,7 @@
+Results of git_pathchk linter (version 2.26.2)
+See documentation on https://nvuillam.github.io/mega-linter/descriptors/git_git_pathchk/
+-----------------------------------------------
+
+[SUCCESS] .automation/test/git_pathchk/good
+
+
