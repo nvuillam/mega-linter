@@ -8,7 +8,7 @@ class Reporter:
     # Report definition
     name = None
     report_folder = None
-    scope = None  # Can be megalinter or linter
+    scope = None  # Can be mega-linter or linter
 
     # Constructor: Initialize Linter instance with name and config variables
     def __init__(self, params=None):
