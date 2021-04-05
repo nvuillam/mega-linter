@@ -42,6 +42,13 @@ linters:
       vscode:
         - name: Native Support
           url: https://code.visualstudio.com/docs/python/linting#_pylint
+    reviewdog_processor:
+      class_name: Regex
+      init_params:
+        regex: ^(?P<path>[^:]+):(?P<line>\d+):(?P<column>\d+):(?P<message>.+)$
+        ignored_line_regexes:
+          - ^\s*\*+\s
+          - ^\s*\[\w+\] .*$
 
   # BLACK
   - linter_name: black
