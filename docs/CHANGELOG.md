@@ -21,6 +21,7 @@ Note: Can be used with `nvuillam/mega-linter@insiders` in your GitHub Action meg
 - Use Python virtual-environment in dev-dependencies shell example
 - Fix #367 : Display editorconfig-checker version
 - Fix #379 : New configuration FAIL_IF_MISSING_LINTER_IN_FLAVOR
+- Add Reviewdog JSONL Reporter
 
 - Linter versions upgrades
   - [flake8](https://flake8.pycqa.org) from 3.8.4 to **3.9.0** on 2021-03-15

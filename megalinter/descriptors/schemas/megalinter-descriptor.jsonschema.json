@@ -914,6 +914,28 @@
             "title": "Linter configuration key",
             "type": "string"
           },
+          "reviewdog_processor": {
+            "$id": "#/properties/linters/items/properties/reviewdog_processor",
+            "description": "Reviewdog processor to convert linter output to RDJSONL format",
+            "properties": {
+              "class_name": {
+                "$id": "#/properties/linters/items/properties/reviewdog_processor/class_name",
+                "description": "Subclass of RdjsonlConvertor to use to process linter output",
+                "examples": [
+                  "Regex",
+                  "UnifiedDiffs"
+                ],
+                "type": "string"
+              },
+              "init_params": {
+                "$id": "#/properties/linters/items/properties/reviewdog_processor/init_params",
+                "description": "Initi parameters for initialising subclass of RdjsonlConvertor",
+                "type": "object"
+              }
+            },
+            "title": "Reviewdog processor",
+            "type": "object"
+          },
           "test_folder": {
             "$id": "#/properties/linters/items/test_folder",
             "description": "Test folder containing _good_ and _bad_ files, if different from parent descriptor test_folder",
