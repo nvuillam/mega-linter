@@ -64,6 +64,7 @@
         "JAVASCRIPT",
         "JSON",
         "JSX",
+        "JUPYTER",
         "KOTLIN",
         "KUBERNETES",
         "LATEX",
@@ -133,6 +134,7 @@
         "JSON_ESLINT_PLUGIN_JSONC",
         "JSON_V8R",
         "JSX_ESLINT",
+        "JUPYTER_JUPYFMT",
         "KOTLIN_KTLINT",
         "KUBERNETES_KUBEVAL",
         "LATEX_CHKTEX",
@@ -3396,6 +3398,78 @@
     "JSX_FILTER_REGEX_INCLUDE": {
       "$id": "#/properties/JSX_FILTER_REGEX_INCLUDE",
       "title": "Including regex filter for JSX descriptor",
+      "type": "string"
+    },
+    "JUPYTER_FILTER_REGEX_EXCLUDE": {
+      "$id": "#/properties/JUPYTER_FILTER_REGEX_EXCLUDE",
+      "title": "Excluding regex filter for JUPYTER descriptor",
+      "type": "string"
+    },
+    "JUPYTER_FILTER_REGEX_INCLUDE": {
+      "$id": "#/properties/JUPYTER_FILTER_REGEX_INCLUDE",
+      "title": "Including regex filter for JUPYTER descriptor",
+      "type": "string"
+    },
+    "JUPYTER_JUPYFMT_ARGUMENTS": {
+      "$id": "#/properties/JUPYTER_JUPYFMT_ARGUMENTS",
+      "description": "JUPYTER_JUPYFMT: User custom arguments to add in linter CLI call",
+      "examples:": [
+        "--foo",
+        "bar"
+      ],
+      "items": {
+        "type": "string"
+      },
+      "title": "JUPYTER_JUPYFMT: Custom arguments",
+      "type": [
+        "array",
+        "string"
+      ]
+    },
+    "JUPYTER_JUPYFMT_DISABLE_ERRORS": {
+      "$id": "#/properties/JUPYTER_JUPYFMT_DISABLE_ERRORS",
+      "default": false,
+      "title": "JUPYTER_JUPYFMT: Linter does not make Mega-Linter fail even if errors are found",
+      "type": "boolean"
+    },
+    "JUPYTER_JUPYFMT_DISABLE_ERRORS_IF_LESS_THAN": {
+      "$id": "#/properties/JUPYTER_JUPYFMT_DISABLE_ERRORS_IF_LESS_THAN",
+      "default": 0,
+      "title": "JUPYTER_JUPYFMT: Maximum number of errors allowed",
+      "type": "number"
+    },
+    "JUPYTER_JUPYFMT_FILE_EXTENSIONS": {
+      "$id": "#/properties/JUPYTER_JUPYFMT_FILE_EXTENSIONS",
+      "examples:": [
+        ".py",
+        ".myext"
+      ],
+      "items": {
+        "type": "string"
+      },
+      "title": "JUPYTER_JUPYFMT: Override descriptor/linter matching files extensions",
+      "type": "array"
+    },
+    "JUPYTER_JUPYFMT_FILE_NAMES_REGEX": {
+      "$id": "#/properties/JUPYTER_JUPYFMT_FILE_NAMES_REGEX",
+      "examples": [
+        "Dockerfile(-.+)?",
+        "Jenkinsfile"
+      ],
+      "items": {
+        "type": "string"
+      },
+      "title": "JUPYTER_JUPYFMT: Override descriptor/linter matching file name regex",
+      "type": "array"
+    },
+    "JUPYTER_JUPYFMT_FILTER_REGEX_EXCLUDE": {
+      "$id": "#/properties/JUPYTER_JUPYFMT_FILTER_REGEX_EXCLUDE",
+      "title": "JUPYTER_JUPYFMT: Excluding Regex",
+      "type": "string"
+    },
+    "JUPYTER_JUPYFMT_FILTER_REGEX_INCLUDE": {
+      "$id": "#/properties/JUPYTER_JUPYFMT_FILTER_REGEX_INCLUDE",
+      "title": "JUPYTER_JUPYFMT: Including Regex",
       "type": "string"
     },
     "KOTLIN_FILTER_REGEX_EXCLUDE": {

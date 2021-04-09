@@ -1,0 +1,26 @@
+descriptor_id: JUPYTER
+descriptor_type: tooling_format
+descriptor_flavors:
+  - python
+file_extensions:
+  - ".ipynb"
+linters:
+  # JUPYFMT
+  - linter_name: jupyfmt
+    is_formatter: true
+    name: JUPYTER_JUPYFMT
+    linter_url: https://github.com/kpj/jupyfmt
+    cli_lint_extra_args:
+      - "--compact-diff"
+      - "--check"
+    cli_lint_fix_arg_name: "--megalinter-fix-flag" # Workaround for MegaLinter
+    cli_lint_fix_remove_args:
+      - "--compact-diff"
+      - "--check"
+    cli_help_arg_name: "--help"
+    cli_version_arg_name: "--version"
+    examples:
+      - "jupyfmt --check --compact-diff Notebook.ipynb"
+    install:
+      pip:
+        - jupyfmt

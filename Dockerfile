@@ -122,6 +122,7 @@ RUN mkdir -p ${GOPATH}/src ${GOPATH}/bin
 RUN pip3 install --no-cache-dir \
           cpplint \
           cfn-lint \
+          jupyfmt \
           pylint \
           black \
           flake8 \

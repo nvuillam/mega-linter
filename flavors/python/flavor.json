@@ -22,6 +22,7 @@
         "JSON_JSONLINT",
         "JSON_ESLINT_PLUGIN_JSONC",
         "JSON_V8R",
+        "JUPYTER_JUPYFMT",
         "KOTLIN_KTLINT",
         "KUBERNETES_KUBEVAL",
         "MARKDOWN_MARKDOWNLINT",

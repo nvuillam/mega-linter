@@ -144,6 +144,11 @@
     "image": "https://avatars3.githubusercontent.com/u/3903?s=400&v=4",
     "title": "zaach/jsonlint"
   },
+  "jupyfmt": {
+    "description": "The uncompromising Jupyter notebook formatter. Contribute to kpj/jupyfmt development by creating an account on GitHub.",
+    "image": "https://avatars.githubusercontent.com/u/645279?s=400&v=4",
+    "title": "kpj/jupyfmt"
+  },
   "ktlint": {
     "description": "An anti-bikeshedding Kotlin linter with built-in formatter.",
     "image": null,

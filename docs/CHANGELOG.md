@@ -5,6 +5,9 @@
 
 Note: Can be used with `nvuillam/mega-linter@insiders` in your GitHub Action mega-linter.yml file, or with `nvuillam/mega-linter@latest` docker image
 
+- Linters
+  - Format Jupyter notebooks with [jupyfmt](https://github.com/kpj/jupyfmt)
+
 - Linter versions upgrades
   - [phpstan](https://phpstan.org/) from 0.12.82 to **0.12.83** on 2021-04-03
   - [markdown-table-formatter](https://www.npmjs.com/package/markdown-table-formatter) from 1.0.4 to **1.1.0** on 2021-04-05
@@ -128,7 +131,7 @@ Note: Can be used with `nvuillam/mega-linter@insiders` in your GitHub Action meg
 
 - Linters
   - Format YAML with prettier
-  
+
 - Core
   - Lint docker image using [Dockle](https://github.com/goodwithtech/dockle)
 
@@ -204,7 +207,7 @@ Note: Can be used with `nvuillam/mega-linter@insiders` in your GitHub Action meg
   - Add docker-in-docker management (reuse running docker instance)
   - Allow to skip auto apply fixes with commit or PR if latest commit text contains `skip fix`
   - Provide new issue link to create a new flavor to improve performances
-  
+
 - Linters
   - Add [revive](https://github.com/mgechev/revive) GO linter
   - Add [SwiftLint](https://github.com/realm/SwiftLint) for Swift language
