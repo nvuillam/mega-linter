@@ -51,3 +51,12 @@ linters:
       vscode:
         - name: vscode-checkstyle
           url: https://marketplace.visualstudio.com/items?itemName=shengchen.vscode-checkstyle
+    reviewdog_processor:
+      class_name: Regex
+      init_params:
+        regex: ^\[ERROR\] (?P<path>[^:]+):(?P<line>\d+):(?P<column>\d+):(?P<message>.+)$
+        ignored_line_regexes:
+          - ^Starting audit
+          - ^Audit done
+          - ^Checkstyle ends
+          - ^\[ERROR\] [^:]+$
