@@ -191,3 +191,16 @@ jobs:
       - name: Run mega-linter-runner tests
         if: ${{ steps.docker_build.outcome }} == 'success' && (${{ success() }} || ${{ failure() }}) && !contains(github.event.head_commit.message, 'quick build')
         run: cd mega-linter-runner && MEGALINTER_RELEASE=${{steps.image_tag.outputs.tag}} MEGALINTER_NO_DOCKER_PULL=true npm run test
+
+      ###################################
+      # Check security flaws with trivy #
+      ###################################
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: 'docker.io/nvuillam/mega-linter:${{steps.image_tag.outputs.tag}}'
+          format: 'table'
+          exit-code: '1'
+          ignore-unfixed: true
+          vuln-type: 'os,library'
+          severity: 'CRITICAL,HIGH'

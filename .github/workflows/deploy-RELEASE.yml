@@ -102,3 +102,16 @@ jobs:
           sed -E 's/.*"v([^"]+)".*/\1/' \
           ) && docker run --rm -v /var/run/docker.sock:/var/run/docker.sock \
             goodwithtech/dockle:v${VERSION} nvuillam/mega-linter:${{ github.event.release.tag_name }}
+
+      ###################################
+      # Check security flaws with trivy #
+      ###################################
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: 'docker.io/nvuillam/mega-linter:${{ github.event.release.tag_name }}'
+          format: 'table'
+          exit-code: '1'
+          ignore-unfixed: true
+          vuln-type: 'os,library'
+          severity: 'CRITICAL,HIGH'
