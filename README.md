@@ -372,7 +372,7 @@ You may activate [File.io reporter](https://nvuillam.github.io/mega-linter/repor
     steps:
     - script: |
         docker pull nvuillam/mega-linter:v4
-        docker run -v $(System.DefaultWorkingDirectory):/tmp/lint nvuillam/mega-linter
+        docker run -v $(System.DefaultWorkingDirectory):/srv/megalinter-workspace nvuillam/mega-linter
       displayName: 'Code Scan using Mega-Linter'
 ```
 
@@ -388,7 +388,7 @@ stage('Mega-Linter') {
     agent {
         docker {
             image 'nvuillam/mega-linter:v4'
-            args "-e VALIDATE_ALL_CODEBASE=true -v ${WORKSPACE}:/tmp/lint --entrypoint=''"
+            args "-e VALIDATE_ALL_CODEBASE=true -v ${WORKSPACE}:/srv/megalinter-workspace --entrypoint=''"
             reuseNode true
         }
     }
@@ -464,7 +464,7 @@ Configuration is assisted with auto-completion and validation in most commonly u
 | **ADDITIONAL_EXCLUDED_DIRECTORIES**                 | \[\]                         | List of additional excluded directory basenames. They are excluded at any nested level.                                                                                                                     |
 | [**APPLY_FIXES**](#apply-fixes)                     | `none`                       | Activates formatting and auto-fixing [(more info)](#apply-fixes)                                                                                                                                            |
 | **DEFAULT_BRANCH**                                  | `master`                     | The name of the repository default branch. Warning: In new github repositories, master branch is named `main`, so you need to override this value with `main`                                               |
-| **DEFAULT_WORKSPACE**                               | `/tmp/lint`                  | The location containing files to lint if you are running locally.                                                                                                                                           |
+| **DEFAULT_WORKSPACE**                               | `/srv/megalinter-workspace`                  | The location containing files to lint if you are running locally.                                                                                                                                           |
 | **DISABLE_ERRORS**                                  | `false`                      | Flag to have the linter complete with exit code 0 even if errors were detected.                                                                                                                             |
 | [**DISABLE**](#activation-and-deactivation)         | <!-- -->                     | List of disabled descriptors keys [(more info)](#activation-and-deactivation)                                                                                                                               |
 | [**DISABLE_LINTERS**](#activation-and-deactivation) | <!-- -->                     | List of disabled linters keys [(more info)](#activation-and-deactivation)                                                                                                                                   |

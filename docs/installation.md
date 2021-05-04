@@ -149,7 +149,7 @@ You may activate [File.io reporter](https://nvuillam.github.io/mega-linter/repor
     steps:
     - script: |
         docker pull nvuillam/mega-linter:v4
-        docker run -v $(System.DefaultWorkingDirectory):/tmp/lint nvuillam/mega-linter
+        docker run -v $(System.DefaultWorkingDirectory):/srv/megalinter-workspace nvuillam/mega-linter
       displayName: 'Code Scan using Mega-Linter'
 ```
 
@@ -165,7 +165,7 @@ stage('Mega-Linter') {
     agent {
         docker {
             image 'nvuillam/mega-linter:v4'
-            args "-e VALIDATE_ALL_CODEBASE=true -v ${WORKSPACE}:/tmp/lint --entrypoint=''"
+            args "-e VALIDATE_ALL_CODEBASE=true -v ${WORKSPACE}:/srv/megalinter-workspace --entrypoint=''"
             reuseNode true
         }
     }

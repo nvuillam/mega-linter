@@ -70,7 +70,7 @@ class mega_linter_2_fixes(unittest.TestCase):
             # file_name = (
             #     updated_sources_dir
             #    + os.path.sep
-            #    + fixable_file.replace('/tmp/lint', "")
+            #    + fixable_file.replace(utils.get_sources_folder(), "")
             # )
             # self.assertTrue(
             #    os.path.isfile(file_name),

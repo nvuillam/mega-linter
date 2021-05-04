@@ -19,7 +19,7 @@ linters:
       - "lint"
     cli_lint_extra_args_after:
       - "--path"
-      - "/tmp/lint"
+      - "/srv/megalinter-workspace"
       - "--strict"
     cli_lint_fix_arg_name: "autocorrect"
     cli_lint_fix_remove_args:
@@ -27,7 +27,7 @@ linters:
     cli_docker_image: norionomura/swiftlint
     cli_docker_args:
       - "-v"
-      - "{{WORKSPACE}}:/tmp/lint:rw"
+      - "{{WORKSPACE}}:/srv/megalinter-workspace:rw"
     config_file_name: ".swiftlint.yml"
     cli_config_arg_name: ""
     cli_help_arg_name: "help"
@@ -35,8 +35,8 @@ linters:
     cli_lint_errors_count: regex_number
     cli_lint_errors_regex: "Found ([0-9]+) violations"
     examples:
-      - "docker run -v /tmp/lint:/tmp/lint:rw norionomura/swiftlint:latest swiftlint lint --path /tmp/lint --strict"
-      - "docker run -v /tmp/lint:/tmp/lint:rw norionomura/swiftlint:latest swiftlint autocorrect --path /tmp/lint --strict"
+      - "docker run -v /example_project:/srv/megalinter-workspace:rw norionomura/swiftlint:latest swiftlint lint --path /srv/megalinter-workspace --strict"
+      - "docker run -v /example_project:/srv/megalinter-workspace:rw norionomura/swiftlint:latest swiftlint autocorrect --path /srv/megalinter-workspace --strict"
     ide:
       atom:
         - name: linter-swiftlint

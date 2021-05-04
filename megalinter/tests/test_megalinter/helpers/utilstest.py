@@ -16,8 +16,8 @@ from git import Repo
 from megalinter import Megalinter, config, utils
 
 REPO_HOME = (
-    "/tmp/lint"
-    if os.path.isdir("/tmp/lint")
+    utils.get_sources_folder()
+    if os.path.isdir(utils.get_sources_folder())
     else os.path.dirname(os.path.abspath(__file__))
     + os.path.sep
     + ".."
@@ -52,8 +52,8 @@ def linter_test_setup(params=None):
     )
     # Root path of default rules
     root_dir = (
-        "/tmp/lint"
-        if os.path.isdir("/tmp/lint")
+        utils.get_sources_folder()
+        if os.path.isdir(utils.get_sources_folder())
         else os.path.relpath(
             os.path.relpath(os.path.dirname(os.path.abspath(__file__))) + "/../../../.."
         )
@@ -264,8 +264,8 @@ def test_get_linter_version(linter, test_self):
     )
     # Write in linter-versions.json
     root_dir = (
-        "/tmp/lint"
-        if os.path.isdir("/tmp/lint")
+        utils.get_sources_folder()
+        if os.path.isdir(utils.get_sources_folder())
         else os.path.relpath(
             os.path.relpath(os.path.dirname(os.path.abspath(__file__))) + "/../../../.."
         )
@@ -322,8 +322,8 @@ def test_get_linter_help(linter, test_self):
     )
     # Write in linter-helps.json
     root_dir = (
-        "/tmp/lint"
-        if os.path.isdir("/tmp/lint")
+        utils.get_sources_folder()
+        if os.path.isdir(utils.get_sources_folder())
         else os.path.relpath(
             os.path.relpath(os.path.dirname(os.path.abspath(__file__))) + "/../../../.."
         )

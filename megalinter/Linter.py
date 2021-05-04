@@ -374,7 +374,7 @@ class Linter:
             # Set config file label if not set by remote rule
             if self.config_file is not None and self.config_file_label is None:
                 self.config_file_label = self.config_file.replace(
-                    "/tmp/lint", ""
+                    utils.get_sources_folder(), ""
                 ).replace("/action/lib/.automation/", "")
         # Include regex :try first NAME + _FILTER_REGEX_INCLUDE, then LANGUAGE + _FILTER_REGEX_INCLUDE
         if config.exists(self.name + "_FILTER_REGEX_INCLUDE"):
@@ -702,12 +702,12 @@ class Linter:
             volume_root = config.get("MEGALINTER_VOLUME_ROOT", "")
             if volume_root != "":
                 workspace_value = (
-                    volume_root + "/" + self.workspace.replace("/tmp/lint", "")
+                    volume_root + "/" + self.workspace.replace(utils.get_sources_folder(), "")
                 )
             else:
                 workspace_value = self.workspace
         else:
-            workspace_value = "/tmp/lint"
+            workspace_value = utils.get_sources_folder()
         docker_command += map(
             lambda arg, w=workspace_value: arg.replace("{{WORKSPACE}}", w),
             self.cli_docker_args,
@@ -716,7 +716,7 @@ class Linter:
         if type(command) == str:
             command = " ".join(docker_command) + " " + command
         else:
-            command = docker_command + command  # ["ls", "-A", "/tmp/lint"]
+            command = docker_command + command  # ["ls", "-A", utils.get_sources_folder()]
         return command
 
     ########################################
@@ -746,7 +746,7 @@ class Linter:
             final_config_file = self.config_file
             if self.cli_docker_image is not None:
                 final_config_file = final_config_file.replace(
-                    self.workspace, "/tmp/lint"
+                    self.workspace, utils.get_sources_folder()
                 )
             if self.cli_config_arg_name.endswith("="):
                 cmd += [self.cli_config_arg_name + final_config_file]

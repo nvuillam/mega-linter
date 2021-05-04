@@ -10,8 +10,8 @@ import git
 from megalinter import config
 
 REPO_HOME_DEFAULT = (
-    "/tmp/lint"
-    if os.path.isdir("/tmp/lint")
+    get_sources_folder()
+    if os.path.isdir(get_sources_folder())
     else os.environ.get("DEFAULT_WORKSPACE")
     if os.path.isdir(os.environ.get("DEFAULT_WORKSPACE", "null"))
     else os.path.dirname(os.path.abspath(__file__)) + os.path.sep + ".."
@@ -20,8 +20,8 @@ REPO_HOME_DEFAULT = (
 ANSI_ESCAPE_REGEX = re.compile(r"(\x9B|\x1B\[)[0-?]*[ -\/]*[@-~]")
 LIST_OF_REPLACEMENTS = [
     # Mega-Linter image
-    ["/tmp/lint/", ""],
-    ["tmp/lint/", ""],
+    [get_sources_folder(), ""],
+    [get_sources_folder()[1:], ""],
     # GitHub Actions
     ["/github/workspace/", ""],
     ["github/workspace/", ""],
@@ -214,3 +214,7 @@ def normalize_log_string(str_in):
     for replacement in LIST_OF_REPLACEMENTS:
         str_in = str_in.replace(replacement[0], replacement[1])
     return str_in
+
+
+def get_sources_folder():
+    return "/srv/megalinter-workspace"

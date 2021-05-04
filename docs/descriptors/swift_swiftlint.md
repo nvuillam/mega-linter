@@ -7,7 +7,7 @@
 - Version in Mega-Linter: **0.43.1**
 - Visit [Official Web Site](https://github.com/realm/SwiftLint#readme){target=_blank}
 - Docker image: [norionomura/swiftlint:latest](https://hub.docker.com/r/norionomura/swiftlint){target=_blank}
-  - arguments: `-v {{WORKSPACE}}:/tmp/lint:rw`
+  - arguments: `-v {{WORKSPACE}}:/srv/megalinter-workspace:rw`
 - See [How to configure swiftlint rules](https://github.com/realm/SwiftLint#configuration){target=_blank}
 - See [How to disable swiftlint rules in files](https://github.com/realm/SwiftLint#disable-rules-in-code){target=_blank}
 - See [Index of problems detected by swiftlint](https://realm.github.io/SwiftLint/rule-directory.html){target=_blank}
@@ -66,11 +66,11 @@ This linter is available in the following flavours
 ### Example calls
 
 ```shell
-docker run -v /tmp/lint:/tmp/lint:rw norionomura/swiftlint:latest swiftlint lint --path /tmp/lint --strict
+docker run -v /example_project:/srv/megalinter-workspace:rw norionomura/swiftlint:latest swiftlint lint --path /srv/megalinter-workspace --strict
 ```
 
 ```shell
-docker run -v /tmp/lint:/tmp/lint:rw norionomura/swiftlint:latest swiftlint autocorrect --path /tmp/lint --strict
+docker run -v /example_project:/srv/megalinter-workspace:rw norionomura/swiftlint:latest swiftlint autocorrect --path /srv/megalinter-workspace --strict
 ```
 
 

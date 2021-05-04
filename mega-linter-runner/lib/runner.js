@@ -95,7 +95,7 @@ class MegaLinterRunner {
       "-v",
       "/var/run/docker.sock:/var/run/docker.sock:rw",
       "-v",
-      `${lintPath}:/tmp/lint:rw`,
+      `${lintPath}:/srv/megalinter-workspace:rw`,
     ];
     if (options.fix === true) {
       commandArgs.push(...["-e", "APPLY_FIXES=all"]);

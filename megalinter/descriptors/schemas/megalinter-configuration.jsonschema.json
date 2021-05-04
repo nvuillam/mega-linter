@@ -1563,7 +1563,7 @@
     },
     "DEFAULT_WORKSPACE": {
       "$id": "#/properties/DEFAULT_WORKSPACE",
-      "default": "/tmp/lint",
+      "default": "/srv/megalinter-workspace",
       "description": "The location containing files to lint if you are running as docker image",
       "title": "Default Workspace",
       "type": "string"
@@ -2238,7 +2238,7 @@
     },
     "GITHUB_WORKSPACE": {
       "$id": "#/properties/GITHUB_WORKSPACE",
-      "default": "/tmp/lint",
+      "default": "/srv/megalinter-workspace",
       "description": "Base directory for REPORT_OUTPUT_FOLDER, for user-defined linter rules location, for location of linted files if DEFAULT_WORKSPACE is not set",
       "title": "GitHub Workspace",
       "type": "string"

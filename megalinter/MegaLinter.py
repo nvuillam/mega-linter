@@ -216,25 +216,25 @@ class Megalinter:
     def get_workspace(self):
         default_workspace = config.get("DEFAULT_WORKSPACE", "")
         github_workspace = config.get("GITHUB_WORKSPACE", "")
-        # Github action run without override of DEFAULT_WORKSPACE and using /tmp/lint
+        # Github action run without override of DEFAULT_WORKSPACE and using string returned from utils.get_sources_folder()
         if (
             default_workspace == ""
             and github_workspace != ""
-            and os.path.isdir(github_workspace + "/tmp/lint")
+            and os.path.isdir(github_workspace + utils.get_sources_folder())
         ):
             logging.debug(
-                "[Context] Github action run without override of DEFAULT_WORKSPACE - /tmp/lint"
+                "[Context] Github action run without override of DEFAULT_WORKSPACE - utils.get_sources_folder()"
             )
-            return github_workspace + "/tmp/lint"
+            return github_workspace + utils.get_sources_folder()
         # Docker run without override of DEFAULT_WORKSPACE
         elif default_workspace != "" and os.path.isdir(
-            "/tmp/lint" + os.path.sep + default_workspace
+            utils.get_sources_folder() + os.path.sep + default_workspace
         ):
             logging.debug(
                 "[Context] Docker run without override of DEFAULT_WORKSPACE"
-                f" - {default_workspace}/tmp/lint{os.path.sep + default_workspace}"
+                f" - {default_workspace + utils.get_sources_folder() + os.path.sep + default_workspace}"
             )
-            return default_workspace + "/tmp/lint" + os.path.sep + default_workspace
+            return default_workspace + utils.get_sources_folder() + os.path.sep + default_workspace
         # Docker run with override of DEFAULT_WORKSPACE for test cases
         elif default_workspace != "" and os.path.isdir(default_workspace):
             logging.debug(
@@ -242,11 +242,11 @@ class Megalinter:
             )
             return default_workspace
         # Docker run test classes without override of DEFAULT_WORKSPACE
-        elif os.path.isdir("/tmp/lint"):
+        elif os.path.isdir(utils.get_sources_folder()):
             logging.debug(
-                "[Context] Docker run test classes without override of DEFAULT_WORKSPACE - /tmp/lint"
+                "[Context] Docker run test classes without override of DEFAULT_WORKSPACE - utils.get_sources_folder()"
             )
-            return "/tmp/lint"
+            return utils.get_sources_folder()
         # Github action with override of DEFAULT_WORKSPACE
         elif (
             default_workspace != ""
@@ -258,7 +258,7 @@ class Megalinter:
                 f" - {github_workspace + os.path.sep + default_workspace}"
             )
             return github_workspace + os.path.sep + default_workspace
-        # Github action without override of DEFAULT_WORKSPACE and NOT using /tmp/lint
+        # Github action without override of DEFAULT_WORKSPACE and NOT using the string returned from utils.get_sources_folder()
         elif (
             default_workspace == ""
             and github_workspace != ""
@@ -266,7 +266,7 @@ class Megalinter:
             and os.path.isdir(github_workspace)
         ):
             logging.debug(
-                "[Context] Github action without override of DEFAULT_WORKSPACE and NOT using /tmp/lint"
+                "[Context] Github action without override of DEFAULT_WORKSPACE and NOT using the string returned from utils.get_sources_folder()"
                 f" - {github_workspace}"
             )
             return github_workspace
