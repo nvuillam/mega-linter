@@ -4,7 +4,7 @@
 
 ## flake8 documentation
 
-- Version in Mega-Linter: **3.9.1**
+- Version in Mega-Linter: **3.9.2**
 - Visit [Official Web Site](https://flake8.pycqa.org){target=_blank}
 - See [How to configure flake8 rules](https://flake8.pycqa.org/en/latest/user/configuration.html#project-configuration){target=_blank}
   - If custom `.flake8` config file is not found, [.flake8](https://github.com/nvuillam/mega-linter/tree/master/TEMPLATES/.flake8){target=_blank} will be used
@@ -118,8 +118,8 @@ optional arguments:
                         of opening bracket's line.
   --ignore errors       Comma-separated list of errors and warnings to ignore
                         (or skip). For example, ``--ignore=E4,E51,W234``.
-                        (Default: ['W504', 'E704', 'E123', 'E126', 'E226',
-                        'W503', 'E24', 'E121'])
+                        (Default: ['E121', 'E126', 'W503', 'W504', 'E24',
+                        'E226', 'E123', 'E704'])
   --extend-ignore errors
                         Comma-separated list of errors and warnings to add to
                         the list of ignored ones. For example, ``--extend-

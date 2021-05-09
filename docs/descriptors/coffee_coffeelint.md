@@ -4,7 +4,7 @@
 
 ## coffeelint documentation
 
-- Version in Mega-Linter: **4.1.4**
+- Version in Mega-Linter: **5.0.1**
 - Visit [Official Web Site](http://www.coffeelint.org){target=_blank}
 - See [How to configure coffeelint rules](http://www.coffeelint.org/#options){target=_blank}
   - If custom `.coffee-lint.json` config file is not found, [.coffee-lint.json](https://github.com/nvuillam/mega-linter/tree/master/TEMPLATES/.coffee-lint.json){target=_blank} will be used
