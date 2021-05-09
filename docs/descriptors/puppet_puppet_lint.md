@@ -109,70 +109,70 @@ puppet-lint --fail-on-warnings --no-autoloader_layout-check --fix myfile.pp
     Checks:
         --only-checks CHECKS         A comma separated list of checks that should be run
         --ignore-paths PATHS         A comma separated list of patterns to ignore
-        --no-ensure_first_param-check
-                                     Skip the ensure_first_param check.
-        --no-unquoted_file_mode-check
-                                     Skip the unquoted_file_mode check.
-        --no-unquoted_resource_title-check
-                                     Skip the unquoted_resource_title check.
-        --no-ensure_not_symlink_target-check
-                                     Skip the ensure_not_symlink_target check.
-        --no-duplicate_params-check  Skip the duplicate_params check.
-        --no-file_mode-check         Skip the file_mode check.
-        --no-single_quote_string_with_variables-check
-                                     Skip the single_quote_string_with_variables check.
-        --no-quoted_booleans-check   Skip the quoted_booleans check.
-        --quoted_booleans-check      Enable the quoted_booleans check.
         --no-only_variable_string-check
                                      Skip the only_variable_string check.
-        --no-double_quoted_strings-check
-                                     Skip the double_quoted_strings check.
         --no-variables_not_enclosed-check
                                      Skip the variables_not_enclosed check.
+        --no-quoted_booleans-check   Skip the quoted_booleans check.
+        --quoted_booleans-check      Enable the quoted_booleans check.
+        --no-double_quoted_strings-check
+                                     Skip the double_quoted_strings check.
         --no-puppet_url_without_modules-check
                                      Skip the puppet_url_without_modules check.
+        --no-single_quote_string_with_variables-check
+                                     Skip the single_quote_string_with_variables check.
+        --no-unquoted_node_name-check
+                                     Skip the unquoted_node_name check.
         --no-variable_is_lowercase-check
                                      Skip the variable_is_lowercase check.
         --no-variable_contains_dash-check
                                      Skip the variable_contains_dash check.
-        --no-names_containing_uppercase-check
-                                     Skip the names_containing_uppercase check.
-        --no-arrow_on_right_operand_line-check
-                                     Skip the arrow_on_right_operand_line check.
-        --no-code_on_top_scope-check Skip the code_on_top_scope check.
-        --code_on_top_scope-check    Enable the code_on_top_scope check.
-        --no-inherits_across_namespaces-check
-                                     Skip the inherits_across_namespaces check.
-        --no-class_inherits_from_params_class-check
-                                     Skip the class_inherits_from_params_class check.
-        --class_inherits_from_params_class-check
-                                     Enable the class_inherits_from_params_class check.
-        --no-autoloader_layout-check Skip the autoloader_layout check.
-        --no-nested_classes_or_defines-check
-                                     Skip the nested_classes_or_defines check.
-        --no-names_containing_dash-check
-                                     Skip the names_containing_dash check.
-        --no-variable_scope-check    Skip the variable_scope check.
-        --no-parameter_order-check   Skip the parameter_order check.
-        --no-right_to_left_relationship-check
-                                     Skip the right_to_left_relationship check.
+        --no-80chars-check           Skip the 80chars check.
+        --80chars-check              Enable the 80chars check.
+        --no-hard_tabs-check         Skip the hard_tabs check.
+        --no-2sp_soft_tabs-check     Skip the 2sp_soft_tabs check.
+        --no-140chars-check          Skip the 140chars check.
+        --no-arrow_alignment-check   Skip the arrow_alignment check.
+        --no-trailing_whitespace-check
+                                     Skip the trailing_whitespace check.
+        --no-documentation-check     Skip the documentation check.
         --no-case_without_default-check
                                      Skip the case_without_default check.
         --no-selector_inside_resource-check
                                      Skip the selector_inside_resource check.
-        --no-documentation-check     Skip the documentation check.
+        --no-arrow_on_right_operand_line-check
+                                     Skip the arrow_on_right_operand_line check.
+        --no-variable_scope-check    Skip the variable_scope check.
+        --no-names_containing_dash-check
+                                     Skip the names_containing_dash check.
+        --no-autoloader_layout-check Skip the autoloader_layout check.
+        --no-class_inherits_from_params_class-check
+                                     Skip the class_inherits_from_params_class check.
+        --class_inherits_from_params_class-check
+                                     Enable the class_inherits_from_params_class check.
+        --no-inherits_across_namespaces-check
+                                     Skip the inherits_across_namespaces check.
+        --no-code_on_top_scope-check Skip the code_on_top_scope check.
+        --code_on_top_scope-check    Enable the code_on_top_scope check.
+        --no-right_to_left_relationship-check
+                                     Skip the right_to_left_relationship check.
+        --no-nested_classes_or_defines-check
+                                     Skip the nested_classes_or_defines check.
+        --no-names_containing_uppercase-check
+                                     Skip the names_containing_uppercase check.
+        --no-parameter_order-check   Skip the parameter_order check.
         --no-slash_comments-check    Skip the slash_comments check.
         --no-star_comments-check     Skip the star_comments check.
-        --no-hard_tabs-check         Skip the hard_tabs check.
-        --no-140chars-check          Skip the 140chars check.
-        --no-80chars-check           Skip the 80chars check.
-        --80chars-check              Enable the 80chars check.
-        --no-arrow_alignment-check   Skip the arrow_alignment check.
-        --no-trailing_whitespace-check
-                                     Skip the trailing_whitespace check.
-        --no-2sp_soft_tabs-check     Skip the 2sp_soft_tabs check.
-        --no-unquoted_node_name-check
-                                     Skip the unquoted_node_name check.
+        --no-file_mode-check         Skip the file_mode check.
+        --no-unquoted_file_mode-check
+                                     Skip the unquoted_file_mode check.
+        --no-ensure_first_param-check
+                                     Skip the ensure_first_param check.
+        --no-unquoted_resource_title-check
+                                     Skip the unquoted_resource_title check.
+        --no-duplicate_params-check  Skip the duplicate_params check.
+        --no-ensure_not_symlink_target-check
+                                     Skip the ensure_not_symlink_target check.
 ```
 
 ### Installation on mega-linter Docker image

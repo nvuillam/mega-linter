@@ -4,7 +4,7 @@
 
 ## sql-lint documentation
 
-- Version in Mega-Linter: **0.0.16**
+- Version in Mega-Linter: **0.0.17**
 - Visit [Official Web Site](https://github.com/joereynolds/sql-lint#readme){target=_blank}
 - See [How to configure sql-lint rules](https://sql-lint.readthedocs.io/en/latest/files/configuration.html){target=_blank}
   - If custom `.sql-config.json` config file is not found, [.sql-config.json](https://github.com/nvuillam/mega-linter/tree/master/TEMPLATES/.sql-config.json){target=_blank} will be used

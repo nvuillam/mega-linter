@@ -58,27 +58,30 @@ dotnet-format --folder --exclude / --include myfile.cs
 ### Help content
 
 ```shell
-dotnet-format:
+dotnet-format
   dotnet-format
 
 Usage:
   dotnet-format [options] [<workspace>]
 
 Arguments:
-  <workspace>    A path to a solution file, a project file, or a folder containing a solution or project file. If a path is not specified then the current directory is used.
+  <workspace>  A path to a solution file, a project file, or a folder containing a solution or project file. If a path is not specified then the current directory is used. [default: ]
 
 Options:
-  -f, --folder                                                               Whether to treat the `<workspace>` argument as a simple folder of files.
-  -w, --fix-whitespace                                                       Run whitespace formatting. Run by default when not applying fixes.
-  -s, --fix-style <error|info|warn>                                          Run code style analyzers and apply fixes.
-  -a, --fix-analyzers <error|info|warn>                                      Run 3rd party analyzers and apply fixes.
-  --include <include>                                                        A list of relative file or folder paths to include in formatting. All files are formatted if empty. [default: System.String[]]
-  --exclude <exclude>                                                        A list of relative file or folder paths to exclude from formatting. [default: System.String[]]
-  --check                                                                    Formats files without saving changes to disk. Terminates with a non-zero exit code if any files were formatted.
-  --report <report-path>                                                     Accepts a file path, which if provided, will produce a json report in the given directory. [default: ]
-  -v, --verbosity <d|detailed|diag|diagnostic|m|minimal|n|normal|q|quiet>    Set the verbosity level. Allowed values are q[uiet], m[inimal], n[ormal], d[etailed], and diag[nostic]
-  --version                                                                  Show version information
-  -?, -h, --help                                                             Show help and usage information
+  --no-restore                                                             Doesn't execute an implicit restore before formatting.
+  -f, --folder                                                             Whether to treat the `<workspace>` argument as a simple folder of files.
+  -w, --fix-whitespace                                                     Run whitespace formatting. Run by default when not applying fixes.
+  -s, --fix-style <error|info|warn>                                        Run code style analyzers and apply fixes.
+  -a, --fix-analyzers <error|info|warn>                                    Run 3rd party analyzers and apply fixes.
+  --diagnostics <diagnostics>                                              A space separated list of diagnostic ids to use as a filter when fixing code style or 3rd party issues. [default: ]
+  --include <include>                                                      A list of relative file or folder paths to include in formatting. All files are formatted if empty. [default: ]
+  --exclude <exclude>                                                      A list of relative file or folder paths to exclude from formatting. [default: ]
+  --check                                                                  Formats files without saving changes to disk. Terminates with a non-zero exit code if any files were formatted.
+  --report <report-path>                                                   Accepts a file path, which if provided, will produce a json report in the given directory.
+  -v, --verbosity <d|detailed|diag|diagnostic|m|minimal|n|normal|q|quiet>  Set the verbosity level. Allowed values are q[uiet], m[inimal], n[ormal], d[etailed], and diag[nostic]
+  --binarylog <binary-log-path>                                            Log all project or solution load information to a binary log file.
+  --version                                                                Show version information
+  -?, -h, --help                                                           Show help and usage information
 
 ```
 

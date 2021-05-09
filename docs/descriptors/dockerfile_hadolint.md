@@ -4,7 +4,7 @@
 
 ## hadolint documentation
 
-- Version in Mega-Linter: **2.3.0**
+- Version in Mega-Linter: **2.4.0**
 - Visit [Official Web Site](https://github.com/hadolint/hadolint#readme){target=_blank}
 - See [How to configure hadolint rules](https://github.com/hadolint/hadolint#configure){target=_blank}
   - If custom `.hadolint.yml` config file is not found, [.hadolint.yml](https://github.com/nvuillam/mega-linter/tree/master/TEMPLATES/.hadolint.yml){target=_blank} will be used
@@ -88,12 +88,12 @@ hadolint --config .hadolint.yml Dockerfile
 hadolint - Dockerfile Linter written in Haskell
 
 Usage: hadolint [-v|--version] [--no-fail] [--no-color] [-c|--config FILENAME]
-                [-f|--format ARG] [DOCKERFILE...] [--error RULECODE]
-                [--warning RULECODE] [--info RULECODE] [--style RULECODE]
-                [--ignore RULECODE]
+                [-V|--verbose] [-f|--format ARG] [DOCKERFILE...]
+                [--error RULECODE] [--warning RULECODE] [--info RULECODE]
+                [--style RULECODE] [--ignore RULECODE]
                 [--trusted-registry REGISTRY (e.g. docker.io)]
                 [--require-label LABELSCHEMA (e.g. maintainer:text)]
-                [--strict-labels]
+                [--strict-labels] [-t|--failure-theshold THRESHOLD]
   Lint Dockerfile for errors and best practices
 
 Available options:
@@ -103,6 +103,8 @@ Available options:
                            is violated
   --no-color               Don't colorize output
   -c,--config FILENAME     Path to the configuration file
+  -V,--verbose             Enables verbose logging of hadolint's output to
+                           stderr
   -f,--format ARG          The output format for the results [tty | json |
                            checkstyle | codeclimate | gitlab_codeclimate |
                            codacy] (default: tty)
@@ -121,6 +123,11 @@ Available options:
                            format requirement `format`
   --strict-labels          Do not permit labels other than specified in
                            `label-schema`
+  -t,--failure-theshold THRESHOLD
+                           Exit with failure code only when rules with a
+                           severity above THRESHOLD are violated. Accepted
+                           values: [error | warning | info | style | ignore |
+                           none] (default: info)
 ```
 
 ### Installation on mega-linter Docker image
