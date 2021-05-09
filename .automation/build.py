@@ -752,9 +752,9 @@ def process_type(linters_by_type, type1, type_label, linters_tables_md):
             f"| {linter.name}_ARGUMENTS | User custom arguments to add in linter CLI call<br/>"
             f'Ex: `-s --foo "bar"` |  |',
             f"| {linter.name}_FILTER_REGEX_INCLUDE | Custom regex including filter<br/>"
-            f"Ex: `(src|lib)` | Include every file |",
+            f"Ex: `(src\|lib)` | Include every file |",
             f"| {linter.name}_FILTER_REGEX_EXCLUDE | Custom regex excluding filter<br/>"
-            f"Ex: `(test|examples)` | Exclude no file |",
+            f"Ex: `(test\|examples)` | Exclude no file |",
             f"| {linter.name}_FILE_EXTENSIONS | Allowed file extensions."
             f' `"*"` matches any extension, `""` matches empty extension. Empty list excludes all files<br/>'
             f"Ex: `[\".py\", \"\"]` | {dump_as_json(linter.file_extensions, 'Exclude every file')} |",
